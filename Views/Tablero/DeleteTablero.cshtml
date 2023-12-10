@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Eliminar Tablero";
+}
+@model Tablero
+
+
+
+<form asp-controller="Tablero" asp-action="DeleteTablero">
+    <div class="form-group">
+        <label asp-for="@Model.Id">Id tablero a eliminar:</label>
+        <input asp-for="@Model.Id" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Eliminar</button>
+</form>

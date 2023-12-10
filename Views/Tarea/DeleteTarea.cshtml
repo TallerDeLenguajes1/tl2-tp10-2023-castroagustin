@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Eliminar Tarea";
+}
+@model Tarea
+
+
+
+<form asp-controller="Tarea" asp-action="DeleteTarea">
+    <div class="form-group">
+        <label asp-for="@Model.Id">Id tarea a eliminar:</label>
+        <input asp-for="@Model.Id" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Eliminar</button>
+</form>

@@ -1,0 +1,15 @@
+@model Tablero
+
+
+<form asp-controller="Tablero" asp-action="CreateTablero">
+    <div class="form-group">
+        <label asp-for="@Model.IdUsuarioPropietario">Id usuario:</label>
+        <input asp-for="@Model.IdUsuarioPropietario" class="form-control" />
+        <label asp-for="@Model.Nombre">Nombre del tablero:</label>
+        <input asp-for="@Model.Nombre" class="form-control" />
+        <label asp-for="@Model.Descripcion">Descripcion del tablero:</label>
+        <input asp-for="@Model.Descripcion" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear</button>
+</form>

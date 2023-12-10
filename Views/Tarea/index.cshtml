@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Tareas";
+}
+
+@model List<Tarea>
+
+<h2> Lista de Tareas </h2>
+<table class="table table-striped">
+    <thead>
+        <th>Id</th>
+        <th>Id tablero</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Color</th>
+        <th>Estado</th>
+        <th>Id usuario asignado</th>
+    </thead>
+    <tbody>
+        @foreach (var tarea in Model)
+        {
+            <tr>
+                <td>@tarea.Id</td>
+                <td>@tarea.IdTablero</td>
+                <td>@tarea.Nombre</td>
+                <td>@tarea.Descripcion</td>
+                <td>@tarea.Color</td>
+                <td>@tarea.Estado</td>
+                <td>@tarea.IdUsuarioAsignado</td>
+            </tr>
+        }
+    </tbody>
+</table>
