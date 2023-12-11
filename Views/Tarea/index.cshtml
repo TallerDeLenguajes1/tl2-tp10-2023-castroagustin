@@ -2,7 +2,7 @@
     ViewData["Title"] = "Tareas";
 }
 
-@model List<Tarea>
+@model tl2_tp10_2023_castroagustin.ViewModels.ListarTareasViewModel
 
 <h2> Lista de Tareas </h2>
 <table class="table table-striped">
@@ -14,9 +14,11 @@
         <th>Color</th>
         <th>Estado</th>
         <th>Id usuario asignado</th>
+        <th></th>
+        <th></th>
     </thead>
     <tbody>
-        @foreach (var tarea in Model)
+        @foreach (var tarea in Model.Tareas)
         {
             <tr>
                 <td>@tarea.Id</td>
@@ -26,6 +28,8 @@
                 <td>@tarea.Color</td>
                 <td>@tarea.Estado</td>
                 <td>@tarea.IdUsuarioAsignado</td>
+                <td><a asp-controller="Tarea" asp-action="UpdateTarea" asp-route-id="@tarea.Id">Modificar</a></td>
+                <td><a asp-controller="Tarea" asp-action="DeleteTarea" asp-route-id="@tarea.Id">Eliminar</a></td>
             </tr>
         }
     </tbody>

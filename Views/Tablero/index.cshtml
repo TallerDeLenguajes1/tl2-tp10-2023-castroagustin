@@ -2,7 +2,7 @@
     ViewData["Title"] = "Tableros";
 }
 
-@model List<Tablero>
+@model tl2_tp10_2023_castroagustin.ViewModels.ListarTablerosViewModel
 
 <h2> Lista de Tableros </h2>
 <table class="table table-striped">
@@ -13,7 +13,7 @@
         <th>Descripcion</th>
     </thead>
     <tbody>
-        @foreach (var tablero in Model)
+        @foreach (var tablero in Model.Tableros)
         {
             <tr>
                 <td>@tablero.Id</td>

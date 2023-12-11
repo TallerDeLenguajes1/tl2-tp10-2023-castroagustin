@@ -8,13 +8,15 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
         private string cadenaConexion = "Data Source=db/kanban.db;Cache=Shared";
         public void Create(Usuario usuario)
         {
-            var query = @"INSERT INTO usuario (nombre_de_usuario) VALUES (@nombre)";
+            var query = @"INSERT INTO usuario (nombre_de_usuario, contrasenia, rol) VALUES (@nombre, @contrasenia, @rol)";
             using (SQLiteConnection connection = new SQLiteConnection(cadenaConexion))
             {
                 var command = new SQLiteCommand(query, connection);
                 connection.Open();
 
                 command.Parameters.Add(new SQLiteParameter("@nombre", usuario.NombreDeUsuario));
+                command.Parameters.Add(new SQLiteParameter("@contrasenia", usuario.Contrasenia));
+                command.Parameters.Add(new SQLiteParameter("@rol", usuario.Rol));
                 command.ExecuteNonQuery();
 
                 connection.Close();
@@ -23,13 +25,15 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
 
         public void Update(int id, Usuario usuario)
         {
-            var query = @"UPDATE usuario SET nombre_de_usuario = @nombre WHERE id = @id";
+            var query = @"UPDATE usuario SET nombre_de_usuario = @nombre, contrasenia = @contrasenia, rol = @rol WHERE id = @id";
             using (SQLiteConnection connection = new SQLiteConnection(cadenaConexion))
             {
                 var command = new SQLiteCommand(query, connection);
                 connection.Open();
 
                 command.Parameters.Add(new SQLiteParameter("@nombre", usuario.NombreDeUsuario));
+                command.Parameters.Add(new SQLiteParameter("@contrasenia", usuario.Contrasenia));
+                command.Parameters.Add(new SQLiteParameter("@rol", usuario.Rol));
                 command.Parameters.Add(new SQLiteParameter("@id", id));
                 command.ExecuteNonQuery();
 
@@ -54,6 +58,8 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
                         var usuario = new Usuario();
                         usuario.Id = Convert.ToInt32(reader["id"]);
                         usuario.NombreDeUsuario = reader["nombre_de_usuario"].ToString();
+                        usuario.Contrasenia = reader["contrasenia"].ToString();
+                        usuario.Rol = (Roles)Convert.ToInt32(reader["rol"]);
                         usuarios.Add(usuario);
                     }
                 }
@@ -79,6 +85,8 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
                     {
                         usuario.Id = Convert.ToInt32(reader["id"]);
                         usuario.NombreDeUsuario = reader["nombre_de_usuario"].ToString();
+                        usuario.Contrasenia = reader["contrasenia"].ToString();
+                        usuario.Rol = (Roles)Convert.ToInt32(reader["rol"]);
                     }
                 }
                 connection.Close();
