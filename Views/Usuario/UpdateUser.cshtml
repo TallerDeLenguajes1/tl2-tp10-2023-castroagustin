@@ -4,17 +4,24 @@
 <form asp-controller="Usuario" asp-action="UpdateUser">
     <div class="form-group">
         <input asp-for="@Model.Id" hidden />
-        <label asp-for="@Model.NombreDeUsuario">Nombre:</label>
+        <label asp-for="@Model.NombreDeUsuario"></label>
         <input asp-for="@Model.NombreDeUsuario" class="form-control" />
+        <span asp-validation-for="@Model.NombreDeUsuario" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.Contrasenia">Contraseña:</label>
+        <label asp-for="@Model.Contrasenia"></label>
         <input asp-for="@Model.Contrasenia" class="form-control" />
+        <span asp-validation-for="@Model.Contrasenia" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.Rol">Rol:</label>
+        <label asp-for="@Model.Rol"></label>
         <input asp-for="@Model.Rol" class="form-control" />
+        <span asp-validation-for="@Model.Rol" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Confirmar</button>
+    <button type="submit" class="btn btn-primary mt-3">Confirmar</button>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

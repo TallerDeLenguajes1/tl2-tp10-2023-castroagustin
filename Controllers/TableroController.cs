@@ -8,15 +8,15 @@ namespace tl2_tp10_2023_castroagustin.Controllers;
 
 public class TableroController : Controller
 {
-    private TableroRepository tableroRepository;
-    private TareaRepository tareaRepository;
+    private readonly ITableroRepository _tableroRepository;
+    private readonly ITareaRepository _tareaRepository;
     private readonly ILogger<TableroController> _logger;
 
-    public TableroController(ILogger<TableroController> logger)
+    public TableroController(ILogger<TableroController> logger, ITableroRepository tableroRepository, ITareaRepository tareaRepository)
     {
         _logger = logger;
-        tableroRepository = new TableroRepository();
-        tareaRepository = new TareaRepository();
+        _tableroRepository = tableroRepository;
+        _tareaRepository = tareaRepository;
     }
 
     public IActionResult Index()
@@ -24,12 +24,12 @@ public class TableroController : Controller
         if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
         if (esAdmin())
         {
-            var tableros = tableroRepository.GetAll();
+            var tableros = _tableroRepository.GetAll();
             return View(new ListarTablerosViewModel(tableros));
         }
         else
         {
-            var tableros = tableroRepository.GetAllByUser((int)HttpContext.Session.GetInt32("id"));
+            var tableros = _tableroRepository.GetAllByUser((int)HttpContext.Session.GetInt32("id"));
             return View(new ListarTablerosViewModel(tableros));
         }
     }
@@ -45,7 +45,8 @@ public class TableroController : Controller
     public IActionResult CreateTablero(CrearTableroViewModel tablero)
     {
         if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        tableroRepository.Create(new Tablero(tablero));
+        if (!ModelState.IsValid) return RedirectToAction("CreateTablero");
+        _tableroRepository.Create(new Tablero(tablero));
         return RedirectToAction("Index");
     }
 
@@ -53,14 +54,15 @@ public class TableroController : Controller
     public IActionResult UpdateTablero(int id)
     {
         if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        var tablero = tableroRepository.Get(id);
+        var tablero = _tableroRepository.Get(id);
         return View(new ModificarTableroViewModel(tablero));
     }
     [HttpPost]
     public IActionResult UpdateTablero(ModificarTableroViewModel tablero)
     {
         if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        tableroRepository.Update(tablero.Id, new Tablero(tablero));
+        if (!ModelState.IsValid) return RedirectToAction("Index");
+        _tableroRepository.Update(tablero.Id, new Tablero(tablero));
         return RedirectToAction("Index");
     }
 
@@ -70,15 +72,15 @@ public class TableroController : Controller
         if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
         if (!esAdmin())
         {
-            var tablero = tableroRepository.Get(id);
+            var tablero = _tableroRepository.Get(id);
             if ((int)HttpContext.Session.GetInt32("id") != tablero.IdUsuarioPropietario) return RedirectToAction("Index");
         }
-        var tareas = tareaRepository.GetAllByTablero(id);
+        var tareas = _tareaRepository.GetAllByTablero(id);
         foreach (var tarea in tareas)
         {
-            tareaRepository.Remove(tarea.Id);
+            _tareaRepository.Remove(tarea.Id);
         }
-        tableroRepository.Remove(id);
+        _tableroRepository.Remove(id);
         return RedirectToAction("Index");
     }
 

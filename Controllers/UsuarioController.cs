@@ -8,13 +8,13 @@ namespace tl2_tp10_2023_castroagustin.Controllers;
 
 public class UsuarioController : Controller
 {
-    private UsuarioRepository usuarioRepository;
+    private readonly IUsuarioRepository _usuarioRepository;
     private readonly ILogger<UsuarioController> _logger;
 
-    public UsuarioController(ILogger<UsuarioController> logger)
+    public UsuarioController(ILogger<UsuarioController> logger, IUsuarioRepository usuarioRepository)
     {
         _logger = logger;
-        usuarioRepository = new UsuarioRepository();
+        _usuarioRepository = usuarioRepository;
     }
 
     public IActionResult Index()
@@ -22,13 +22,13 @@ public class UsuarioController : Controller
         if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
         if (esAdmin())
         {
-            var usuarios = usuarioRepository.GetAll();
+            var usuarios = _usuarioRepository.GetAll();
             return View(new ListarUsuariosViewModel(usuarios));
         }
         else
         {
             List<Usuario> usuarios = new List<Usuario>();
-            usuarios.Add(usuarioRepository.Get((int)HttpContext.Session.GetInt32("id")));
+            usuarios.Add(_usuarioRepository.Get((int)HttpContext.Session.GetInt32("id")));
             return View(new ListarUsuariosViewModel(usuarios));
         }
     }
@@ -42,7 +42,8 @@ public class UsuarioController : Controller
     [HttpPost]
     public IActionResult CreateUser(CrearUsuarioViewModel usuario)
     {
-        usuarioRepository.Create(new Usuario(usuario));
+        if (!ModelState.IsValid) return RedirectToAction("CreateUser");
+        _usuarioRepository.Create(new Usuario(usuario));
         return RedirectToAction("Index");
     }
 
@@ -50,7 +51,7 @@ public class UsuarioController : Controller
     public IActionResult UpdateUser(int id)
     {
         if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        var user = usuarioRepository.Get(id);
+        var user = _usuarioRepository.Get(id);
         return View(new ModificarUsuarioViewModel(user));
     }
 
@@ -58,23 +59,17 @@ public class UsuarioController : Controller
     public IActionResult UpdateUser(ModificarUsuarioViewModel usuario)
     {
         if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        usuarioRepository.Update(usuario.Id, new Usuario(usuario));
+        if (!ModelState.IsValid) return RedirectToAction("Index");
+        _usuarioRepository.Update(usuario.Id, new Usuario(usuario));
         return RedirectToAction("Index");
     }
 
-    [HttpGet]
     public IActionResult DeleteUser(int id)
     {
         if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        var user = usuarioRepository.Get(id);
-        return View(user);
-    }
+        if (!ModelState.IsValid) return RedirectToAction("CreateUser");
 
-    [HttpPost]
-    public IActionResult DeleteUser(Usuario usuario)
-    {
-        if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        usuarioRepository.Remove(usuario.Id);
+        _usuarioRepository.Remove(id);
         return RedirectToAction("Index");
     }
 
