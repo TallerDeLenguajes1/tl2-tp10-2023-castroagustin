@@ -56,3 +56,4 @@ D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp10-2023-castroagustin\bin\Debug\net7.
 D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp10-2023-castroagustin\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp10-2023-castroagustin\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.csproj.AssemblyReference.cache
 D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp10-2023-castroagustin\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.csproj.CopyComplete
+D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp10-2023-castroagustin\bin\Debug\net7.0\db\kanban.db

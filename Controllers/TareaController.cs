@@ -22,94 +22,132 @@ public class TareaController : Controller
 
     public IActionResult Index(int id)
     {
-        if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        /* if (esAdmin())
+        try
         {
-            var tareas = _tareaRepository.GetAll();
-            return View(new ListarTareasViewModel(tareas));
-        }
-        else
-        {
-            var tareas = _tareaRepository.GetAllByUser((int)HttpContext.Session.GetInt32("id"));
-            return View(new ListarTareasViewModel(tareas));
-        } */
+            if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
 
-        if (!esAdmin())
-        {
-            int idUser = (int)HttpContext.Session.GetInt32("id");
-            var tareas = _tareaRepository.GetAllByTablero(id);
-            var tableros = _tableroRepository.GetAll();
-            if (tableros.Any(t => t.Id == id))
+            if (!esAdmin())
+            {
+                int idUser = (int)HttpContext.Session.GetInt32("id");
+                var tareas = _tareaRepository.GetAllByTablero(id);
+                var tableros = _tableroRepository.GetAll();
+                if (tableros.Any(t => t.Id == id))
+                {
+                    return View(new ListarTareasViewModel(_tareaRepository.GetAllByTablero(id)));
+                }
+            }
+            else
             {
                 return View(new ListarTareasViewModel(_tareaRepository.GetAllByTablero(id)));
             }
+            return RedirectToRoute(new { controller = "Tablero", action = "Index" });
         }
-        else
+        catch (Exception ex)
         {
-            return View(new ListarTareasViewModel(_tareaRepository.GetAllByTablero(id)));
+            _logger.LogError(ex.ToString());
+            return RedirectToAction("Error");
         }
-        return RedirectToRoute(new { controller = "Tablero", action = "Index" });
     }
 
     [HttpGet]
     public IActionResult CreateTarea(int id)
     {
-        if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        return View(new CrearTareaViewModel { IdTablero = id });
+        try
+        {
+            if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
+            return View(new CrearTareaViewModel { IdTablero = id });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex.ToString());
+            return RedirectToAction("Error");
+        }
     }
 
     [HttpPost]
     public IActionResult CreateTarea(CrearTareaViewModel tarea)
     {
-        if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        if (!ModelState.IsValid) return RedirectToAction("Index", new { id = tarea.IdTablero });
-        _tareaRepository.Create(tarea.IdTablero, new Tarea(tarea));
-        return RedirectToAction("Index", new { id = tarea.IdTablero });
+        try
+        {
+            if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
+            if (!ModelState.IsValid) return RedirectToAction("Index", new { id = tarea.IdTablero });
+            _tareaRepository.Create(tarea.IdTablero, new Tarea(tarea));
+            return RedirectToAction("Index", new { id = tarea.IdTablero });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex.ToString());
+            return RedirectToAction("Error");
+        }
     }
 
     [HttpGet]
     public IActionResult UpdateTarea(int id)
     {
-        if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        if (!esAdmin())
+        try
         {
-            var idUsuario = (int)HttpContext.Session.GetInt32("id");
-            var tarea = _tareaRepository.Get(id);
-            var tableros = tableroRepository.GetAll();
-            if (tableros.FirstOrDefault(t => t.Id == tarea.IdTablero && tarea.IdUsuarioAsignado == idUsuario) != null)
+            if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
+            if (!esAdmin())
             {
-                return View(new ModificarTareaViewModel(tarea));
+                var idUsuario = (int)HttpContext.Session.GetInt32("id");
+                var tarea = _tareaRepository.Get(id);
+                var tableros = tableroRepository.GetAll();
+                if (tableros.FirstOrDefault(t => t.Id == tarea.IdTablero && tarea.IdUsuarioAsignado == idUsuario) != null)
+                {
+                    return View(new ModificarTareaViewModel(tarea));
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
             }
             else
             {
-                return RedirectToAction("Index");
+                var tarea = _tareaRepository.Get(id);
+                return View(new ModificarTareaViewModel(tarea));
             }
         }
-        else
+        catch (Exception ex)
         {
-            var tarea = _tareaRepository.Get(id);
-            return View(new ModificarTareaViewModel(tarea));
+            _logger.LogError(ex.ToString());
+            return RedirectToAction("Error");
         }
     }
 
     [HttpPost]
     public IActionResult UpdateTarea(ModificarTareaViewModel tarea)
     {
-        if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        if (!ModelState.IsValid) return RedirectToAction("Index", new { id = tarea.IdTablero });
-        _tareaRepository.Update(tarea.Id, new Tarea(tarea));
-        return RedirectToAction("Index");
+        try
+        {
+            if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
+            if (!ModelState.IsValid) return RedirectToAction("Index", new { id = tarea.IdTablero });
+            _tareaRepository.Update(tarea.Id, new Tarea(tarea));
+            return RedirectToAction("Index");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex.ToString());
+            return RedirectToAction("Error");
+        }
     }
 
 
     public IActionResult DeleteTarea(int id)
     {
-        if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
-        if (!ModelState.IsValid) return RedirectToAction("Index", id);
+        try
+        {
+            if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
+            if (!ModelState.IsValid) return RedirectToAction("Index", id);
 
-        var idTablero = _tareaRepository.Get(id).IdTablero;
-        _tareaRepository.Remove(id);
-        return RedirectToAction("Index", new { id = idTablero });
+            var idTablero = _tareaRepository.Get(id).IdTablero;
+            _tareaRepository.Remove(id);
+            return RedirectToAction("Index", new { id = idTablero });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex.ToString());
+            return RedirectToAction("Error");
+        }
     }
 
     private bool logueado()
