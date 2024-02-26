@@ -5,6 +5,7 @@
     <div class="form-group">
         <input asp-for="@Model.Id" hidden />
         <input asp-for="@Model.IdTablero" hidden />
+        <input asp-for="@Model.IdUsuarioPropietario" class="form-control" hidden />
         <label asp-for="@Model.IdUsuarioAsignado">Id usuario asignado:</label>
         <input asp-for="@Model.IdUsuarioAsignado" class="form-control" />
     </div>
@@ -22,7 +23,14 @@
     </div>
     <div class="form-group">
         <label asp-for="@Model.Estado">Estado:</label>
-        <input asp-for="@Model.Estado" class="form-control" />
+        <br>
+        <select label asp-for="@Model.Estado">
+            <option asp-for="@Model.Estado" class="form-control" value="0">Ideas</option>
+            <option asp-for="@Model.Estado" class="form-control" value="1">ToDo</option>
+            <option asp-for="@Model.Estado" class="form-control" value="2">Doing</option>
+            <option asp-for="@Model.Estado" class="form-control" value="3">Review</option>
+            <option asp-for="@Model.Estado" class="form-control" value="4">Done</option>
+        </select>
     </div>
 
     <button type="submit" class="btn btn-primary mt-3">Enviar</button>

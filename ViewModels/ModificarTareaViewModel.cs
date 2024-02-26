@@ -12,9 +12,10 @@ namespace tl2_tp10_2023_castroagustin.ViewModels
         public string Descripcion { get; set; }
         public string Color { get; set; }
         public int? IdUsuarioAsignado { get; set; }
+        public int IdUsuarioPropietario { get; set; }
 
         public ModificarTareaViewModel() { }
-        public ModificarTareaViewModel(Tarea tarea)
+        public ModificarTareaViewModel(Tarea tarea, int idUsuarioPropietario)
         {
             this.Id = tarea.Id;
             this.IdTablero = tarea.IdTablero;
@@ -23,6 +24,7 @@ namespace tl2_tp10_2023_castroagustin.ViewModels
             this.Descripcion = tarea.Descripcion;
             this.Color = tarea.Color;
             this.IdUsuarioAsignado = tarea.IdUsuarioAsignado;
+            this.IdUsuarioPropietario = idUsuarioPropietario;
         }
     }
 }

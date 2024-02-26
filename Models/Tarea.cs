@@ -20,6 +20,7 @@ public class Tarea
     private string color;
     private EstadoTarea estado;
     private int? idUsuarioAsignado;
+    private int idUsuarioPropietario;
 
     public int Id { get => id; set => id = value; }
     public int IdTablero { get => idTablero; set => idTablero = value; }
@@ -28,6 +29,8 @@ public class Tarea
     public string Color { get => color; set => color = value; }
     public EstadoTarea Estado { get => estado; set => estado = value; }
     public int? IdUsuarioAsignado { get => idUsuarioAsignado; set => idUsuarioAsignado = value; }
+    public int IdUsuarioPropietario { get => idUsuarioPropietario; set => idUsuarioPropietario = value; }
+
 
     public Tarea() { }
     public Tarea(CrearTareaViewModel tarea)
@@ -38,6 +41,7 @@ public class Tarea
         this.color = tarea.Color;
         this.estado = tarea.Estado;
         this.idUsuarioAsignado = tarea.IdUsuarioAsignado;
+        this.idUsuarioPropietario = tarea.IdUsuarioPropietario;
     }
     public Tarea(ModificarTareaViewModel tarea)
     {
@@ -48,5 +52,6 @@ public class Tarea
         this.color = tarea.Color;
         this.estado = tarea.Estado;
         this.idUsuarioAsignado = tarea.IdUsuarioAsignado;
+        this.idUsuarioPropietario = tarea.IdUsuarioPropietario;
     }
 }

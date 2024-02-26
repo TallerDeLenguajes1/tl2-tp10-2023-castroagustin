@@ -57,3 +57,121 @@ D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp10-2023-castroagustin\bin\Debug\net7.
 D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp10-2023-castroagustin\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.csproj.AssemblyReference.cache
 D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp10-2023-castroagustin\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.csproj.CopyComplete
 D:\Disco Nuevo\FACET\C IV\TLII\repos\tl2-tp10-2023-castroagustin\bin\Debug\net7.0\db\kanban.db
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\appsettings.json
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\tl2-tp10-2023-castroagustin.staticwebassets.runtime.json
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\tl2-tp10-2023-castroagustin.exe
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\db\kanban.db
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\tl2-tp10-2023-castroagustin.deps.json
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\tl2-tp10-2023-castroagustin.runtimeconfig.json
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\tl2-tp10-2023-castroagustin.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\tl2-tp10-2023-castroagustin.pdb
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\EntityFramework.SqlServer.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\EntityFramework.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Data.SQLite.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Data.SqlClient.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Data.SQLite.EF6.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Drawing.Common.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Security.Permissions.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Windows.Extensions.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win-arm64\native\sni.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win-x64\native\sni.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.csproj.AssemblyReference.cache
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.AssemblyInfoInputs.cache
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.AssemblyInfo.cs
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.csproj.CoreCompileInputs.cache
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.RazorAssemblyInfo.cache
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.RazorAssemblyInfo.cs
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets\msbuild.tl2-tp10-2023-castroagustin.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets\msbuild.build.tl2-tp10-2023-castroagustin.props
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.tl2-tp10-2023-castroagustin.props
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.tl2-tp10-2023-castroagustin.props
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\scopedcss\bundle\tl2-tp10-2023-castroagustin.styles.css
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\scopedcss\projectbundle\tl2-tp10-2023-castroagustin.bundle.scp.css
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.csproj.CopyComplete
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\refint\tl2-tp10-2023-castroagustin.dll
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.pdb
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.genruntimeconfig.cache
+C:\Users\USER\Downloads\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\ref\tl2-tp10-2023-castroagustin.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.csproj.AssemblyReference.cache
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.GeneratedMSBuildEditorConfig.editorconfig
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.AssemblyInfoInputs.cache
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.AssemblyInfo.cs
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.csproj.CoreCompileInputs.cache
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.MvcApplicationPartsAssemblyInfo.cache
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.RazorAssemblyInfo.cache
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.RazorAssemblyInfo.cs
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\refint\tl2-tp10-2023-castroagustin.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.pdb
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\appsettings.Development.json
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\appsettings.json
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\tl2-tp10-2023-castroagustin.staticwebassets.runtime.json
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\tl2-tp10-2023-castroagustin.exe
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\db\kanban.db
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\tl2-tp10-2023-castroagustin.deps.json
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\tl2-tp10-2023-castroagustin.runtimeconfig.json
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\tl2-tp10-2023-castroagustin.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\tl2-tp10-2023-castroagustin.pdb
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\EntityFramework.SqlServer.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\EntityFramework.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Data.SQLite.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.CodeDom.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Data.SqlClient.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Data.SQLite.EF6.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win-arm64\native\sni.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win-x64\native\sni.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\linux-x64\native\SQLite.Interop.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\osx-x64\native\SQLite.Interop.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win-x64\native\SQLite.Interop.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win-x86\native\SQLite.Interop.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets\msbuild.tl2-tp10-2023-castroagustin.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets\msbuild.build.tl2-tp10-2023-castroagustin.props
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.tl2-tp10-2023-castroagustin.props
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.tl2-tp10-2023-castroagustin.props
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets.build.json
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\staticwebassets.development.json
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\scopedcss\bundle\tl2-tp10-2023-castroagustin.styles.css
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\scopedcss\projectbundle\tl2-tp10-2023-castroagustin.bundle.scp.css
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.csproj.CopyComplete
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\tl2-tp10-2023-castroagustin.genruntimeconfig.cache
+D:\Disco Nuevo\FACET\C IV\TLII\tl2-tp10-2023-castroagustin-main\obj\Debug\net7.0\ref\tl2-tp10-2023-castroagustin.dll

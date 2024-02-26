@@ -8,5 +8,6 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
         public List<Tablero> GetAll();
         public void Remove(int id);
         public List<Tablero> GetAllByUser(int idUsuario);
+        public List<Tablero> GetAllByAssigned(int idUsuario);
     }
 }

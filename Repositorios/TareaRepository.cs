@@ -12,13 +12,14 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
         }
         public void Create(int idTablero, Tarea tarea)
         {
-            var query = @"INSERT INTO tarea (id_tablero, nombre, estado, descripcion, color, id_usuario_asignado) VALUES (@idTablero, @nombre, @estado, @desc, @color, @idUsuario)";
+            var query = @"INSERT INTO tarea (id_tablero, id_propietario, nombre, estado, descripcion, color, id_usuario_asignado) VALUES (@idTablero, @idPropietario, @nombre, @estado, @desc, @color, @idUsuario)";
             using (SQLiteConnection connection = new SQLiteConnection(cadenaConexion))
             {
                 var command = new SQLiteCommand(query, connection);
                 connection.Open();
 
                 command.Parameters.Add(new SQLiteParameter("@idTablero", idTablero));
+                command.Parameters.Add(new SQLiteParameter("@idPropietario", tarea.IdUsuarioPropietario));
                 command.Parameters.Add(new SQLiteParameter("@nombre", tarea.Nombre));
                 command.Parameters.Add(new SQLiteParameter("@estado", tarea.Estado));
                 command.Parameters.Add(new SQLiteParameter("@desc", tarea.Descripcion));
@@ -42,6 +43,7 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
                 connection.Open();
 
                 command.Parameters.Add(new SQLiteParameter("@idTablero", tarea.IdTablero));
+                command.Parameters.Add(new SQLiteParameter("@idPropietario", tarea.IdUsuarioPropietario));
                 command.Parameters.Add(new SQLiteParameter("@nombre", tarea.Nombre));
                 command.Parameters.Add(new SQLiteParameter("@estado", tarea.Estado));
                 command.Parameters.Add(new SQLiteParameter("@desc", tarea.Descripcion));
@@ -74,6 +76,7 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
                         tarea = new Tarea();
                         tarea.Id = Convert.ToInt32(reader["id"]);
                         tarea.IdTablero = Convert.ToInt32(reader["id_tablero"]);
+                        tarea.IdUsuarioPropietario = Convert.ToInt32(reader["id_propietario"]);
                         tarea.Nombre = reader["nombre"].ToString();
                         tarea.Estado = (EstadoTarea)Convert.ToInt32(reader["estado"]);
                         tarea.Descripcion = reader["descripcion"].ToString();
@@ -106,6 +109,7 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
                         var tarea = new Tarea();
                         tarea.Id = Convert.ToInt32(reader["id"]);
                         tarea.IdTablero = Convert.ToInt32(reader["id_tablero"]);
+                        tarea.IdUsuarioPropietario = Convert.ToInt32(reader["id_propietario"]);
                         tarea.Nombre = reader["nombre"].ToString();
                         tarea.Estado = (EstadoTarea)Convert.ToInt32(reader["estado"]);
                         tarea.Descripcion = reader["descripcion"].ToString();
@@ -140,6 +144,7 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
                         var tarea = new Tarea();
                         tarea.Id = Convert.ToInt32(reader["id"]);
                         tarea.IdTablero = Convert.ToInt32(reader["id_tablero"]);
+                        tarea.IdUsuarioPropietario = Convert.ToInt32(reader["id_propietario"]);
                         tarea.Nombre = reader["nombre"].ToString();
                         tarea.Estado = (EstadoTarea)Convert.ToInt32(reader["estado"]);
                         tarea.Descripcion = reader["descripcion"].ToString();
@@ -173,6 +178,7 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
                         var tarea = new Tarea();
                         tarea.Id = Convert.ToInt32(reader["id"]);
                         tarea.IdTablero = Convert.ToInt32(reader["id_tablero"]);
+                        tarea.IdUsuarioPropietario = Convert.ToInt32(reader["id_propietario"]);
                         tarea.Nombre = reader["nombre"].ToString();
                         tarea.Estado = (EstadoTarea)Convert.ToInt32(reader["estado"]);
                         tarea.Descripcion = reader["descripcion"].ToString();
@@ -206,6 +212,7 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
                         var tarea = new Tarea();
                         tarea.Id = Convert.ToInt32(reader["id"]);
                         tarea.IdTablero = Convert.ToInt32(reader["id_tablero"]);
+                        tarea.IdUsuarioPropietario = Convert.ToInt32(reader["id_propietario"]);
                         tarea.Nombre = reader["nombre"].ToString();
                         tarea.Estado = (EstadoTarea)Convert.ToInt32(reader["estado"]);
                         tarea.Descripcion = reader["descripcion"].ToString();

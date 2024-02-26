@@ -10,13 +10,15 @@ public class TableroController : Controller
 {
     private readonly ITableroRepository _tableroRepository;
     private readonly ITareaRepository _tareaRepository;
+    private readonly IUsuarioRepository _usuarioRepository;
     private readonly ILogger<TableroController> _logger;
 
-    public TableroController(ILogger<TableroController> logger, ITableroRepository tableroRepository, ITareaRepository tareaRepository)
+    public TableroController(ILogger<TableroController> logger, ITableroRepository tableroRepository, ITareaRepository tareaRepository, IUsuarioRepository usuarioRepository)
     {
         _logger = logger;
         _tableroRepository = tableroRepository;
         _tareaRepository = tareaRepository;
+        _usuarioRepository = usuarioRepository;
     }
 
     public IActionResult Index()
@@ -32,7 +34,7 @@ public class TableroController : Controller
             else
             {
                 var tableros = _tableroRepository.GetAllByUser((int)HttpContext.Session.GetInt32("id"));
-                return View(new ListarTablerosViewModel(tableros));
+                return View(new ListarTablerosViewModel(tableros, _tableroRepository.GetAllByAssigned((int)HttpContext.Session.GetInt32("id")), _usuarioRepository.GetAll(), (int)HttpContext.Session.GetInt32("id")));
             }
         }
         catch (Exception ex)

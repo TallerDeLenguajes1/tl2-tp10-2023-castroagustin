@@ -7,13 +7,11 @@
 <h2> Lista de Tareas </h2>
 <table class="table table-striped">
     <thead>
-        <th>Id</th>
-        <th>Id tablero</th>
         <th>Nombre</th>
         <th>Descripcion</th>
         <th>Color</th>
         <th>Estado</th>
-        <th>Id usuario asignado</th>
+        <th>Usuario asignado</th>
         <th></th>
         <th></th>
     </thead>
@@ -21,15 +19,32 @@
         @foreach (var tarea in Model.Tareas)
         {
             <tr>
-                <td>@tarea.Id</td>
-                <td>@tarea.IdTablero</td>
                 <td>@tarea.Nombre</td>
                 <td>@tarea.Descripcion</td>
                 <td>@tarea.Color</td>
                 <td>@tarea.Estado</td>
                 <td>@tarea.IdUsuarioAsignado</td>
-                <td><a asp-controller="Tarea" asp-action="UpdateTarea" asp-route-id="@tarea.Id">Modificar</a></td>
-                <td><a asp-controller="Tarea" asp-action="DeleteTarea" asp-route-id="@tarea.Id">Eliminar</a></td>
+                @if (@tarea.IdUsuarioPropietario == (int)Context.Session.GetInt32("id") || Context.Session.GetString("rol")
+               == Roles.administrador.ToString())
+                {
+                    <td><a asp-controller="Tarea" class="btn btn-outline-primary" asp-action="UpdateTarea"
+                            asp-route-id="@tarea.Id">Modificar</a></td>
+                    <td><a asp-controller="Tarea" class="btn btn-outline-danger" asp-action="DeleteTarea"
+                            asp-route-id="@tarea.Id"
+                            onclick=" return confirm('¿Estas seguro que quieres eliminar la tarea?')">Eliminar</a></td>
+                }
+                else if (@tarea.IdUsuarioAsignado == Context.Session.GetInt32("id") && @tarea.IdUsuarioPropietario !=
+                @tarea.IdUsuarioAsignado)
+                {
+                    <td><a asp-controller="Tarea" asp-action="UpdateEstado" asp-route-id="@tarea.Id"
+                            class="btn btn-outline-primary">Modificar</a></td>
+                    <td></td>
+                }
+                else
+                {
+                    <td></td>
+                    <td></td>
+                }
             </tr>
         }
     </tbody>

@@ -14,9 +14,12 @@
         <span asp-validation-for="@Model.Contrasenia" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.Rol"></label>
-        <input asp-for="@Model.Rol" class="form-control" />
-        <span asp-validation-for="@Model.Rol" class="text-danger"></span>
+        <label asp-for="@Model.Rol">Rol:</label>
+        <br>
+        <select label asp-for="@Model.Rol">
+            <option asp-for="@Model.Rol" class="form-control" value="0">Administrador</option>
+            <option asp-for="@Model.Rol" class="form-control" value="1">Operador</option>
+        </select>
     </div>
 
     <button type="submit" class="btn btn-primary mt-3">Confirmar</button>

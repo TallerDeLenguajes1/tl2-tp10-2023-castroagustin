@@ -132,10 +132,37 @@ namespace tl2_tp10_2023_castroagustin.Repositorios
                     }
                 }
                 connection.Close();
-
-                if (tableros.Count == 0) throw new Exception("No se encontro ningun tablero");
             }
             return tableros;
+        }
+
+        public List<Tablero> GetAllByAssigned(int idUsuario)
+        {
+            var queryString = "SELECT * FROM tablero INNER JOIN tarea ON(tablero.id = id_tablero) WHERE id_usuario_asignado = @idUsuario AND id_usuario_propietario <> @idUsuario";
+
+            List<Tablero> tableros = null;
+            using (SQLiteConnection connection = new SQLiteConnection(cadenaConexion))
+            {
+                connection.Open();
+                SQLiteCommand command = new SQLiteCommand(queryString, connection);
+                command.Parameters.Add(new SQLiteParameter("@idUsuario", idUsuario));
+                using (SQLiteDataReader reader = command.ExecuteReader())
+                {
+                    tableros = new List<Tablero>();
+                    while (reader.Read())
+                    {
+                        var tablero = new Tablero();
+                        tablero.Id = Convert.ToInt32(reader["id"]);
+                        tablero.Nombre = reader["nombre"].ToString();
+                        tablero.Descripcion = reader["descripcion"].ToString();
+                        tablero.IdUsuarioPropietario = Convert.ToInt32(reader["id_usuario_propietario"]);
+                        tableros.Add(tablero);
+                    }
+                }
+                connection.Close();
+            }
+            if (tableros == null) throw new Exception("No se encontro ningun tablero");
+            return (tableros);
         }
 
         public void Remove(int id)
