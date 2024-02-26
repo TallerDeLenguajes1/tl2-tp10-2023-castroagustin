@@ -9,12 +9,14 @@ namespace tl2_tp10_2023_castroagustin.Controllers;
 public class UsuarioController : Controller
 {
     private readonly IUsuarioRepository _usuarioRepository;
+    private readonly ITableroRepository _tableroRepository;
     private readonly ILogger<UsuarioController> _logger;
 
-    public UsuarioController(ILogger<UsuarioController> logger, IUsuarioRepository usuarioRepository)
+    public UsuarioController(ILogger<UsuarioController> logger, IUsuarioRepository usuarioRepository, ITableroRepository tableroRepository)
     {
         _logger = logger;
         _usuarioRepository = usuarioRepository;
+        _tableroRepository = tableroRepository;
     }
 
     public IActionResult Index()
@@ -112,7 +114,12 @@ public class UsuarioController : Controller
             if (!ModelState.IsValid) return RedirectToAction("CreateUser");
 
             _usuarioRepository.Remove(id);
-            return RedirectToAction("Index");
+            var tableros = _tableroRepository.GetAllByUser(id);
+            foreach (var t in tableros)
+            {
+                _tableroRepository.Remove(t.Id);
+            }
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
         }
         catch (Exception ex)
         {
