@@ -10,13 +10,15 @@ public class UsuarioController : Controller
 {
     private readonly IUsuarioRepository _usuarioRepository;
     private readonly ITableroRepository _tableroRepository;
+    private readonly ITareaRepository _tareaRepository;
     private readonly ILogger<UsuarioController> _logger;
 
-    public UsuarioController(ILogger<UsuarioController> logger, IUsuarioRepository usuarioRepository, ITableroRepository tableroRepository)
+    public UsuarioController(ILogger<UsuarioController> logger, IUsuarioRepository usuarioRepository, ITableroRepository tableroRepository, ITareaRepository tareaRepository)
     {
         _logger = logger;
         _usuarioRepository = usuarioRepository;
         _tableroRepository = tableroRepository;
+        _tareaRepository = tareaRepository;
     }
 
     public IActionResult Index()
@@ -64,7 +66,7 @@ public class UsuarioController : Controller
         {
             if (!ModelState.IsValid) return RedirectToAction("CreateUser");
             _usuarioRepository.Create(new Usuario(usuario));
-            return RedirectToAction("Index");
+            return RedirectToRoute(new { controller = "Login", action = "Index" });
         }
         catch (Exception ex)
         {
@@ -118,6 +120,19 @@ public class UsuarioController : Controller
             foreach (var t in tableros)
             {
                 _tableroRepository.Remove(t.Id);
+                var tareas = _tareaRepository.GetAllByTablero(t.Id);
+                foreach (var tarea in tareas)
+                {
+                    _tareaRepository.Remove(tarea.Id);
+                }
+            }
+            
+            var tareasAsignadas = _tareaRepository.GetAllByUser(id);
+            foreach (var tarea in tareasAsignadas)
+            {
+                var tareaMod = tarea;
+                tareaMod.IdUsuarioAsignado = null;
+                _tareaRepository.Update(tarea.Id, tareaMod);
             }
             return RedirectToRoute(new { controller = "Login", action = "Index" });
         }

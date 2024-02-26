@@ -13,14 +13,19 @@
         <input asp-for="@Model.Contrasenia" class="form-control" />
         <span asp-validation-for="@Model.Contrasenia" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="@Model.Rol">Rol:</label>
-        <br>
-        <select label asp-for="@Model.Rol">
-            <option asp-for="@Model.Rol" class="form-control" value="0">Administrador</option>
-            <option asp-for="@Model.Rol" class="form-control" value="1">Operador</option>
-        </select>
-    </div>
+    @if (Context.Session.GetString("rol") == Roles.administrador.ToString())
+    {
+        <div class="form-group">
+            <label asp-for="@Model.Rol">Rol:</label>
+            <br>
+            <select label asp-for="@Model.Rol">
+                <option asp-for="@Model.Rol" class="form-control" value="0">Administrador</option>
+                <option asp-for="@Model.Rol" class="form-control" value="1">Operador</option>
+            </select>
+        </div>
+    } else {
+        <input asp-for="@Model.Rol" hidden />
+    }
 
     <button type="submit" class="btn btn-primary mt-3">Confirmar</button>
 </form>
