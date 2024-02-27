@@ -4,13 +4,13 @@
 
 @model tl2_tp10_2023_castroagustin.ViewModels.ListarTareasViewModel
 
-<h2> Lista de Tareas </h2>
+<h2>Tareas del tablero "@Model.NombreTablero"</h2>
 <table class="table table-striped">
     <thead>
         <th>Nombre</th>
         <th>Descripcion</th>
-        <th>Color</th>
         <th>Estado</th>
+        <th>Color</th>
         <th>Usuario asignado</th>
         <th></th>
         <th></th>
@@ -21,9 +21,9 @@
             <tr>
                 <td>@tarea.Nombre</td>
                 <td>@tarea.Descripcion</td>
-                <td>@tarea.Color</td>
                 <td>@tarea.Estado</td>
-                <td>@tarea.IdUsuarioAsignado</td>
+                <td>@tarea.Color</td>
+                <td>@tarea.NombreUsuarioAsignado</td>
                 @if (@tarea.IdUsuarioPropietario == (int)Context.Session.GetInt32("id") || Context.Session.GetString("rol")
                == Roles.administrador.ToString())
                 {

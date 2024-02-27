@@ -9,9 +9,9 @@
 
 <table class="table table-striped">
     <thead>
-        <th>Id propietario</th>
         <th>Nombre</th>
         <th>Descripcion</th>
+        <th>Propietario</th>
         <th></th>
         <th></th>
         <th></th>
@@ -20,9 +20,9 @@
         @foreach (var tablero in Model.Tableros)
         {
             <tr>
-                <td>@tablero.IdUsuarioPropietario</td>
                 <td>@tablero.Nombre</td>
                 <td>@tablero.Descripcion</td>
+                <td>@tablero.NombreUsuarioPropietario</td>
                 <td>
                     <a asp-controller="Tarea" asp-action="Index" asp-route-id="@tablero.Id"
                         class="btn btn-outline-success">Ver Tareas</a>
@@ -36,7 +36,7 @@
                         <a asp-controller="Tablero" asp-action="UpdateTablero" asp-route-id="@tablero.Id"
                             class="btn btn btn-secondary">Modificar</a>
                         <a asp-controller="Tablero" asp-action="DeleteTablero" asp-route-id="@tablero.Id" class="btn btn-danger"
-                            onclick="return confirm('¿Estas seguro que quieres eliminar el tablero? IMPORTANTE: Al hacerlo se eliminaran todas las tareas del mismo')">Eliminar</a>
+                            onclick="return confirm(`¿Eliminar el tablero '@tablero.Nombre?'`)">Eliminar</a>
                     </td>
                 }
                 else

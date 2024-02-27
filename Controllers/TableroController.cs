@@ -29,7 +29,8 @@ public class TableroController : Controller
             if (esAdmin())
             {
                 var tableros = _tableroRepository.GetAll();
-                return View(new ListarTablerosViewModel(tableros));
+                var usuarios = _usuarioRepository.GetAll();
+                return View(new ListarTablerosViewModel(tableros, usuarios, (int)HttpContext.Session.GetInt32("id")));
             }
             else
             {
@@ -67,6 +68,7 @@ public class TableroController : Controller
             if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
             if (!ModelState.IsValid) return RedirectToAction("CreateTablero");
             _tableroRepository.Create(new Tablero(tablero));
+            _logger.LogWarning("nombre tablero {0}", tablero.Nombre);
             return RedirectToAction("Index");
         }
         catch (Exception ex)

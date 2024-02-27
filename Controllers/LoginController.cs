@@ -59,4 +59,10 @@ public class LoginController : Controller
         HttpContext.Session.SetString("usuario", usuario.NombreDeUsuario);
         HttpContext.Session.SetString("rol", usuario.Rol.ToString());
     }
+
+    public IActionResult DesloguearUsuario()
+    {
+        HttpContext.Session.Clear();
+        return RedirectToRoute(new { controller = "Login", action = "Index" });
+    }
 }

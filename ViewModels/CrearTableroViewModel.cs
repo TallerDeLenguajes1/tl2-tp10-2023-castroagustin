@@ -15,6 +15,7 @@ namespace tl2_tp10_2023_castroagustin.ViewModels
         public string Nombre { get; set; }
 
         [Display(Name = "Descripcion")]
+        [Required(ErrorMessage = "Este campo es requerido.")]
         public string Descripcion { get; set; }
 
         public CrearTableroViewModel() { }

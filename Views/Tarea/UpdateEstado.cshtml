@@ -4,12 +4,11 @@
 @model tl2_tp10_2023_castroagustin.ViewModels.ModificarEstadoTareaViewModel
 
 <section class="section_forms">
-    <form asp-controller="Tarea" asp-action="UpdateEstado">
-
+    <form asp-controller="Tarea" asp-action="UpdateEstado" class="container" style="max-width: 500px">
+        <h4>Tarea "@Model.Nombre"</h4>
         <div class="form-group">
             <input asp-for="@Model.Id" hidden />
             <input asp-for="@Model.IdTablero" hidden />
-            <input asp-for="@Model.IdUsuarioPropietario" class="form-control" hidden />
         </div>
         <div class="form-group">
             <label asp-for="@Model.Estado"></label>

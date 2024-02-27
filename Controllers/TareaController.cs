@@ -35,12 +35,12 @@ public class TareaController : Controller
                 var tareas = _tareaRepository.GetAllByTablero(id);
                 if (tableros.Any(t => t.Id == id) || tareas.Any(t => t.IdUsuarioAsignado == idUser))
                 {
-                    return View(new ListarTareasViewModel(_tareaRepository.GetAllByTablero(id)));
+                    return View(new ListarTareasViewModel(_tareaRepository.GetAllByTablero(id), _tableroRepository.Get(id), _usuarioRepository.GetAll()));
                 }
             }
             else
             {
-                return View(new ListarTareasViewModel(_tareaRepository.GetAllByTablero(id)));
+                return View(new ListarTareasViewModel(_tareaRepository.GetAllByTablero(id), _tableroRepository.Get(id), _usuarioRepository.GetAll()));
             }
             return RedirectToRoute(new { controller = "Tablero", action = "Index" });
         }
@@ -57,10 +57,13 @@ public class TareaController : Controller
         try
         {
             if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
+            var tablero = _tableroRepository.Get(id);
             return View(new CrearTareaViewModel
             {
                 IdTablero = id,
-                IdUsuarioPropietario = (int)HttpContext.Session.GetInt32("id")
+                IdUsuarioPropietario = (int)HttpContext.Session.GetInt32("id"),
+                Usuarios = _usuarioRepository.GetAll(),
+                NombreTablero = tablero.Nombre
             });
         }
         catch (Exception ex)
@@ -95,8 +98,8 @@ public class TareaController : Controller
             if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
             var tarea = _tareaRepository.Get(id);
             var tablero = _tableroRepository.Get(tarea.IdTablero);
-            
-            return View(new ModificarTareaViewModel(tarea, tablero.IdUsuarioPropietario));
+
+            return View(new ModificarTareaViewModel(tarea, _usuarioRepository.GetAll(), tablero.IdUsuarioPropietario));
         }
         catch (Exception ex)
         {
@@ -113,7 +116,7 @@ public class TareaController : Controller
             if (!logueado()) return RedirectToRoute(new { controller = "Login", action = "Index" });
             if (!ModelState.IsValid) return RedirectToAction("Index", new { id = tarea.IdTablero });
             _tareaRepository.Update(tarea.Id, new Tarea(tarea));
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { id = tarea.IdTablero });
         }
         catch (Exception ex)
         {

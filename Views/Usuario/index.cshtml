@@ -20,8 +20,12 @@
                 <td>@usuario.Id</td>
                 <td>@usuario.NombreDeUsuario</td>
                 <td>@usuario.Rol</td>
-                <td><a asp-controller="Usuario" asp-action="UpdateUser" asp-route-id="@usuario.Id">Modificar</a></td>
-                <td><a asp-controller="Usuario" asp-action="DeleteUser" asp-route-id="@usuario.Id">Eliminar</a></td>
+                <td><a asp-controller="Usuario" asp-action="UpdateUser" class="btn btn-outline-primary"
+                        asp-route-id="@usuario.Id">Modificar</a></td>
+                <td><a asp-controller="Usuario" asp-action="DeleteUser" class="btn btn-outline-danger"
+                        asp-route-id="@usuario.Id"
+                        onclick="return confirm(`¿Estas seguro que quieres eliminar el usuario '@usuario.NombreDeUsuario'?`)">Eliminar</a>
+                </td>
             </tr>
         }
     </tbody>

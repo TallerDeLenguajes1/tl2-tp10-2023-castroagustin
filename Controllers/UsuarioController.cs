@@ -65,6 +65,7 @@ public class UsuarioController : Controller
         try
         {
             if (!ModelState.IsValid) return RedirectToAction("CreateUser");
+            usuario.Rol = Roles.operador;
             _usuarioRepository.Create(new Usuario(usuario));
             return RedirectToRoute(new { controller = "Login", action = "Index" });
         }
@@ -126,7 +127,7 @@ public class UsuarioController : Controller
                     _tareaRepository.Remove(tarea.Id);
                 }
             }
-            
+
             var tareasAsignadas = _tareaRepository.GetAllByUser(id);
             foreach (var tarea in tareasAsignadas)
             {
@@ -134,7 +135,8 @@ public class UsuarioController : Controller
                 tareaMod.IdUsuarioAsignado = null;
                 _tareaRepository.Update(tarea.Id, tareaMod);
             }
-            return RedirectToRoute(new { controller = "Login", action = "Index" });
+            if (id == (int)HttpContext.Session.GetInt32("id")) return RedirectToRoute(new { controller = "Login", action = "Index" });
+            return RedirectToAction("Index");
         }
         catch (Exception ex)
         {

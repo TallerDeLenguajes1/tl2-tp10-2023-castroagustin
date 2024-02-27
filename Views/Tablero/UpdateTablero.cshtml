@@ -1,7 +1,8 @@
 @model tl2_tp10_2023_castroagustin.ViewModels.ModificarTableroViewModel
 
 
-<form asp-controller="Tablero" asp-action="UpdateTablero">
+<form asp-controller="Tablero" asp-action="UpdateTablero" class="container" style="max-width: 500px">
+    <h4>Modificar tablero "@Model.Nombre"</h4>
     <div class="form-group">
         <input asp-for="@Model.Id" hidden />
         <input asp-for="@Model.IdUsuarioPropietario" hidden />
